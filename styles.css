@@ -1,0 +1,65 @@
+:root{
+    --default-duration: 300ms;
+    --fast-duration: 150ms;
+    --slowest-duration: 8000ms;
+    
+    --font-size-1: 1rem;
+    --font-size-1-5: 1.5rem;
+    --font-size-2: 2rem;
+    --font-size-2-5: 2.5rem;
+    --font-size-3: 3rem;
+    }
+    
+    
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+    }
+
+    .go-down-btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        color: black;
+        background-color: #294d61;
+        border-radius: 50%;
+        top: 25%;
+        right: 50%;
+        width: 90px;
+        height: 90px;
+        z-index: 20;
+        transition: transform var(--default-duration) linear;
+    
+    }
+    .go-down-btn:hover{
+        transform: scale(1.1);
+        
+    }
+    .go-down-btn .icon{
+        font-size: var(--font-size-1-5);
+    }
+    .go-down-btn .circle-text{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        animation: rotateText var(--slowest-duration) infinite linear;
+    }
+    .go-down-btn .circle-text span{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transform-origin: 0 45px;
+        font-size: calc(var(--font-size-1) / 1.3);
+    }
+    @keyframes rotateText{
+        from{
+            transform: rotate(360deg);
+        }
+        to{
+            transform: rotate(0deg);
+        }
+    }
